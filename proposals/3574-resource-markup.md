@@ -53,7 +53,8 @@ Different mimetypes will require different notions of "location". A need for new
 
 Hence, the `m.markup.location` value MUST be an object, whose keys are different kinds of locations occupied by a single annotation, with the names of those locations either formalized in the matrix spec or namespaced using Java conventions. Some proposed location types are described in:
 
-- [MSC3592: Markup locations for PDF documents)[https://github.com/matrix-org/matrix-doc/pull/3592]
+- [MSC3592: Markup locations for PDF documents](https://github.com/matrix-org/matrix-spec-proposals/pull/3592)
+- [MSC3752: Markup locations for text](https://github.com/matrix-org/matrix-spec-proposals/pull/3752)
 
 ### Examples
 
@@ -185,7 +186,7 @@ Some disadvantages are:
 
 # Security Considerations - 
 
-None.
+Because state events are not encrypted, `m.space.child` events with `m.markup.location` keys may leak information about encrypted resources. This is really a general problem with unencrypted state events, and should be solved by something like [MSC3414: Encrypted State Events](https://github.com/matrix-org/matrix-spec-proposals/pull/3414). Until encrypted state events are available, MSC individual location types with fields that might leak information should flag this as a security consideration, and clients should mitigate with appropriate warnings.
 
 # Unstable Prefix
 
